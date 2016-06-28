@@ -4,7 +4,8 @@ function main2()
 	//functions2("nurses run")
 	//functions7("The quick brown fox");
 	//functions8(1);
-	functions9([]);
+	//functions9
+	functions11([1,2,3,3]);
 }
 
 /**
@@ -205,4 +206,82 @@ function functions8(x)
 function functions9(arg)
 {	
 	console.log(arg.toString() + " type is: " + typeof arg);
+}
+
+/**
+ * Write a JavaScript function which returns the n rows by n columns identity matrix
+ */
+function functions10(n)
+{
+
+	var array = new Array(n);
+	var output = "";
+
+	//create array of length n. this is creating the columns from left to right
+	for(var i = 0; i < array.length; i ++)
+	{
+		// create the rows from top to bottom
+		var tmp = new Array(n);
+		for(var j = 0; j < tmp.length; j++)
+		{
+			if(j == i)
+			{
+				tmp[j] = 1;
+
+			}
+			else
+			{
+				tmp[j] = 0;
+			}
+			if (j != (n-1))
+			{
+				output += tmp[j] + ",";
+			}
+			else
+			{
+				output += tmp[j] + "\n";
+			}
+			
+		}
+		
+		array[i] = tmp;
+	}
+
+	console.log(output);
+}
+
+/**
+ * Write a JavaScript function which will take an array of numbers stored and find the second lowest and second greatest numbers, respectively. 
+ */
+function functions11(array)
+{
+	
+
+	function compareNumbers(a,b)
+	{
+		return a-b;
+	}
+
+	array.sort(compareNumbers);
+	var secondGreatest = 0;
+	var secondLowest = 0;
+	if (array.length == 2)
+	{
+		secondLowest = array[0];
+		secondGreatest = array[array.length - 1];		
+	}
+	else if(array.length > 2)
+	{
+		secondLowest = array[1];
+		secondGreatest = array[array.length - 2];
+	} 
+	else
+	{
+		secondLowest = array[0];
+		secondGreatest = array[0];
+	}
+	
+	console.log(array.toString());
+	console.log("second greatest is : " + secondGreatest + "\nsecond lowest is: " + secondLowest);
+
 }
