@@ -4,7 +4,7 @@ function main2()
 	//functions2("nurses run")
 	//functions7("The quick brown fox");
 	//functions8(1);
-	functions9([]);
+	functions13(12);
 }
 
 /**
@@ -205,4 +205,91 @@ function functions8(x)
 function functions9(arg)
 {	
 	console.log(arg.toString() + " type is: " + typeof arg);
+}
+
+/**
+ * Write a JavaScript function which says whether a number is perfect.
+ * According to Wikipedia : In number theory, a perfect number is a positive integer that is equal to the sum of its proper positive divisors, that is, the sum of its positive divisors excluding the number itself (also known as its aliquot sum). Equivalently, a perfect number is a number that is half the sum of all of its positive divisors (including itself).
+Example : The first perfect number is 6, because 1, 2, and 3 are its proper positive divisors, and 1 + 2 + 3 = 6. Equivalently, the number 6 is equal to half the sum of all its positive divisors: ( 1 + 2 + 3 + 6 ) / 2 = 6. The next perfect number is 28 = 1 + 2 + 4 + 7 + 14. This is followed by the perfect numbers 496 and 8128.
+ * @param  {[type]}
+ * @return {[type]}
+ */
+function functions12 (args)
+{
+	// if positive integer
+	if (args > 0)
+	{
+		var sum = 1;
+		//check for divisors
+		for(var i = 2; i <= args;i ++)
+		{
+			if (args % i == 0)
+			{
+				sum+= i;
+			}
+
+		}
+
+		if (sum / 2 == args)
+		{
+			console.log(args + " is a perfect number");
+		}
+		else
+		{
+			console.log(args + " is NOT a perfect number");
+		}
+	}
+}
+
+/**
+ * Write a JavaScript function to compute the factors of a positive integer. 
+ * @param  {[type]}
+ * @return {[type]}
+ */
+function functions13 (arg)
+{
+
+	function compareInt(a, b)
+	{
+		return a - b;
+	}
+
+	//array of divisors
+	var divisors = [];
+
+	var factors = "";
+
+	//find all divisors. You only need to check all numbers until the sqrt(n)
+	for (var i = 1; i <= Math.floor(Math.sqrt(arg)); i++)
+	{
+		// if divisible
+		if (arg % i == 0)
+		{
+			divisors.push(i);
+
+			//grab the other divisor
+			// excludes case when i = 1
+			if (arg / i != arg)
+			{
+				divisors.push(arg / i);
+			}
+		}
+
+		divisors.sort(compareInt);
+
+	}
+	console.log(divisors);
+}
+
+/**
+ * Write a JavaScript function to convert an amount to coins.
+ * Sample function : amountTocoins(46, [25, 10, 5, 2, 1])
+ * Here 46 is the amount. and 25, 10, 5, 2, 1 are coins.
+ * Output : 25, 10, 10, 1
+ * @param  {[type]} arg [description]
+ * @return {[type]}     [description]
+ */
+function functions14 (amount, coins[])
+{
+
 }
