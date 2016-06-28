@@ -4,7 +4,12 @@ function main2()
 	//functions2("nurses run")
 	//functions7("The quick brown fox");
 	//functions8(1);
+<<<<<<< HEAD
 	functions13(12);
+=======
+	//functions9
+	functions11([1,2,3,3]);
+>>>>>>> b0e27385eb15b9b5cc8ca8878b9ad11b0a0e1866
 }
 
 /**
@@ -208,6 +213,84 @@ function functions9(arg)
 }
 
 /**
+ * Write a JavaScript function which returns the n rows by n columns identity matrix
+ * @param  {[type]} n [description]
+ * @return {[type]}   [description]
+ */
+function functions10(n)
+{
+
+	var array = new Array(n);
+	var output = "";
+
+	//create array of length n. this is creating the columns from left to right
+	for(var i = 0; i < array.length; i ++)
+	{
+		// create the rows from top to bottom
+		var tmp = new Array(n);
+		for(var j = 0; j < tmp.length; j++)
+		{
+			if(j == i)
+			{
+				tmp[j] = 1;
+
+			}
+			else
+			{
+				tmp[j] = 0;
+			}
+			if (j != (n-1))
+			{
+				output += tmp[j] + ",";
+			}
+			else
+			{
+				output += tmp[j] + "\n";
+			}
+			
+		}
+		
+		array[i] = tmp;
+	}
+
+	console.log(output);
+}
+
+/**
+ * Write a JavaScript function which will take an array of numbers stored and find the second lowest and second greatest numbers, respectively. 
+ */
+function functions11(array)
+{
+	
+	function compareNumbers(a,b)
+	{
+		return a-b;
+	}
+
+	array.sort(compareNumbers);
+	var secondGreatest = 0;
+	var secondLowest = 0;
+	if (array.length == 2)
+	{
+		secondLowest = array[0];
+		secondGreatest = array[array.length - 1];		
+	}
+	else if(array.length > 2)
+	{
+		secondLowest = array[1];
+		secondGreatest = array[array.length - 2];
+	} 
+	else
+	{
+		secondLowest = array[0];
+		secondGreatest = array[0];
+	}
+	
+	console.log(array.toString());
+	console.log("second greatest is : " + secondGreatest + "\nsecond lowest is: " + secondLowest);
+>>>>>>> b0e27385eb15b9b5cc8ca8878b9ad11b0a0e1866
+
+/**
  * Write a JavaScript function which says whether a number is perfect.
  * According to Wikipedia : In number theory, a perfect number is a positive integer that is equal to the sum of its proper positive divisors, that is, the sum of its positive divisors excluding the number itself (also known as its aliquot sum). Equivalently, a perfect number is a number that is half the sum of all of its positive divisors (including itself).
 Example : The first perfect number is 6, because 1, 2, and 3 are its proper positive divisors, and 1 + 2 + 3 = 6. Equivalently, the number 6 is equal to half the sum of all its positive divisors: ( 1 + 2 + 3 + 6 ) / 2 = 6. The next perfect number is 28 = 1 + 2 + 4 + 7 + 14. This is followed by the perfect numbers 496 and 8128.
@@ -291,5 +374,6 @@ function functions13 (arg)
  */
 function functions14 (amount, coins[])
 {
+
 
 }
