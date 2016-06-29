@@ -4,12 +4,10 @@ function main2()
 	//functions2("nurses run")
 	//functions7("The quick brown fox");
 	//functions8(1);
-<<<<<<< HEAD
-	functions13(12);
-=======
+	//functions13(12);
 	//functions9
-	functions11([1,2,3,3]);
->>>>>>> b0e27385eb15b9b5cc8ca8878b9ad11b0a0e1866
+	// functions14(7,[10,5,25,1]);
+	 functions16("thequickbrownfoxjumpsoverthelazydog");
 }
 
 /**
@@ -288,7 +286,7 @@ function functions11(array)
 	
 	console.log(array.toString());
 	console.log("second greatest is : " + secondGreatest + "\nsecond lowest is: " + secondLowest);
->>>>>>> b0e27385eb15b9b5cc8ca8878b9ad11b0a0e1866
+}
 
 /**
  * Write a JavaScript function which says whether a number is perfect.
@@ -368,12 +366,98 @@ function functions13 (arg)
  * Write a JavaScript function to convert an amount to coins.
  * Sample function : amountTocoins(46, [25, 10, 5, 2, 1])
  * Here 46 is the amount. and 25, 10, 5, 2, 1 are coins.
- * Output : 25, 10, 10, 1
+ * @param  {[type]} amount [description]
+ * @param  {[type]} coins  [description]
+ * @return {[type]}        [description]
+ */
+function functions14 (amount, coins)
+{
+	var result = [];
+
+	//coins is an array of coins
+	var initAmount = amount;
+	
+	// Comparator function
+	function descendingInt(a,b)
+	{
+		return b - a;
+	}
+	
+	//sort coins by ascending
+	coins.sort(descendingInt);
+	
+	var i = 0;
+	while(amount > 0)
+	{
+		if (amount >= coins[i])
+		{
+			amount -= coins[i];
+			result.push(coins[i]);
+		}
+		else
+		{
+			i++;
+		}	
+	}
+	
+	console.log("amount: " + initAmount + "\n coins: " + result);
+}
+
+/**
+ * Write a JavaScript function to compute the value of bn where n is the exponent and b is the bases. 
+ * Accept b and n from the user and display the result
+ * @return {[type]} [description]
+ */
+function functions15(b,n)
+{
+	//Built in way
+	//console.log(Math.pow(b,n));
+
+	var result = 1;
+	// Own way
+	for(var i = 0; i < n; i ++)
+	{
+		result *= b;
+	}
+
+	console.log(result);
+}
+
+/**
+ * Write a JavaScript function to extract unique characters from a string.
+ * Example string : "thequickbrownfoxjumpsoverthelazydog"
+ * Expected Output : "thequickbrownfxjmpsvlazydg"
+ * @return {[type]} [description]
+ */
+function functions16(arg)
+{
+	var characters = "";
+
+	// I think what the direction mean, is to extract any character so that every letter in the string is unique
+	for(var i = 0; i < arg.length; i++)
+	{
+		if (!characters.includes(arg[i]))
+		{	
+			characters += arg[i];
+		}
+	}
+	console.log(characters);
+}
+
+/**
+ * Write a JavaScript function to  get the number of occurrences of each letter in specified string
  * @param  {[type]} arg [description]
  * @return {[type]}     [description]
  */
-function functions14 (amount, coins[])
+function functions17(arg)
 {
+	var characters = "";
 
-
+	for(var i = 0; i < arg.length; i++)
+	{
+		if (!characters.includes(arg[i]))
+		{	
+			characters += arg[i];
+		}
+	}	
 }
