@@ -7,8 +7,9 @@ function main2()
 	//functions13(12);
 	//functions9
 	// functions14(7,[10,5,25,1]);
-	 //functions16("thequickbrownfoxjumpsoverthelazydog");
-	 functions17("ching chen aaaa bbb cc");
+	//functions16("thequickbrownfoxjumpsoverthelazydog");
+	//functions17("ching chen aaaa bbb cc");
+	functions18(["a","b","c","d","e","f","g","h","i","j","k"],"_");
 	}
 
 /**
@@ -505,7 +506,40 @@ function functions18(array,key)
 	else
 	{
 		//begin binary search
-		var i = array.length / 2;
+		var i = Math.ceil((array.length -1) / 2);
+		var found = false;
+		var edgeIndex = false;
+		while(!found)
+		{
+
+			//key found
+			if (key == array[i])
+			{
+				console.log("Found " + key + " at index: " + i);
+				found = true;
+			}
+			//case when key is not found
+			else if ((i >= array.length - 1) || (i <= 0))
+			{
+				console.log("Key: " + key + " not found in array");
+				break;
+			}
+			// key is greater, go right
+			else if (key > array[i])
+			{
+				//[0,1,3,4,5,6,7,8,9,10]
+				i += Math.ceil((((array.length - 1) - i) / 2));
+			}
+			// key is smaller, go left
+			else if ( key < array[i])
+			{
+				i = Math.floor(i/2);
+			}
+
+
+
+
+		}
 
 	}
 
