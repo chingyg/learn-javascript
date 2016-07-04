@@ -7,27 +7,28 @@ function main2()
 	//functions13(12);
 	//functions9
 	// functions14(7,[10,5,25,1]);
-	 functions16("thequickbrownfoxjumpsoverthelazydog");
-}
+	 //functions16("thequickbrownfoxjumpsoverthelazydog");
+	 functions17("ching chen aaaa bbb cc");
+	}
 
 /**
  * Write a JavaScript function that reverse a number.
  * @return {[type]} [description]
  */
-function functions1(num)
-{
-	var reverse = "";
-	var x = num;
+ function functions1(num)
+ {
+ 	var reverse = "";
+ 	var x = num;
 
-	while (x > 0)
-	{
-		var temp = x % 10;
-		reverse += temp;
-		x = Math.floor(x / 10);
-	}
+ 	while (x > 0)
+ 	{
+ 		var temp = x % 10;
+ 		reverse += temp;
+ 		x = Math.floor(x / 10);
+ 	}
 
-	reverse =  parseInt(reverse);
-	console.log("Reverse of " + num + ": " + reverse);
+ 	reverse =  parseInt(reverse);
+ 	console.log("Reverse of " + num + ": " + reverse);
 
 	// Solution
 	var reverse2 = num.toString();
@@ -40,8 +41,8 @@ function functions1(num)
  * Write a JavaScript function that checks whether a passed string is palindrome or not?
  * @return {[type]} [description]
  */
-function functions2(string)
-{
+ function functions2(string)
+ {
 	//Need to check for spaces
 	var reverse = string.split("\\s").reverse().join("");
 
@@ -60,20 +61,20 @@ function functions2(string)
  *  Write a JavaScript function that generates all combinations of a string
  * @return {[type]} [description]
  */
-function functions3(string)
-{
-	var result = "";
+ function functions3(string)
+ {
+ 	var result = "";
 
-	for(var i = 0; i < string.length; i ++)
-	{
-		result += string[i] + ",";
-		var previous = string[i];
-		for(var j = i + 1; j < string.length; j++)
-		{
-			previous +=string[j];
-			result += previous + ",";
-		}
-	}
+ 	for(var i = 0; i < string.length; i ++)
+ 	{
+ 		result += string[i] + ",";
+ 		var previous = string[i];
+ 		for(var j = i + 1; j < string.length; j++)
+ 		{
+ 			previous +=string[j];
+ 			result += previous + ",";
+ 		}
+ 	}
 
 	//gets rid of the last comma
 	console.log(result.substring(0,result.length -1));
@@ -83,19 +84,19 @@ function functions3(string)
  * Write a JavaScript function that returns a passed string with letters in alphabetical order.
  * @return {[type]} [description]
  */
-function functions4 (string)
-{
-	var result = string.split("").sort().join("");
-	console.log(string + " in alphabetical order is: " + result);
-}
+ function functions4 (string)
+ {
+ 	var result = string.split("").sort().join("");
+ 	console.log(string + " in alphabetical order is: " + result);
+ }
 
 /**
  * Write a JavaScript function that accepts a string as a parameter and converts the first letter of each word of the string in upper case.
  * @return {[type]} [description]
  */
-function functions5(string)
-{
-	var words = string.split(" ");
+ function functions5(string)
+ {
+ 	var words = string.split(" ");
 
 	// for every word
 	for(var i = 0; i < words.length; i++)
@@ -111,15 +112,15 @@ function functions5(string)
  * Write a JavaScript function that accepts a string as a parameter and find the longest word within the string
  * @return {[type]} [description]
  */
-function functions6(string)
-{
-	var words = string.split(" ");
+ function functions6(string)
+ {
+ 	var words = string.split(" ");
 
-	var index = [];
-	var maxLength = 0;
+ 	var index = [];
+ 	var maxLength = 0;
 
-	for(var i = 0; i < words.length; i++)
-	{	
+ 	for(var i = 0; i < words.length; i++)
+ 	{	
 		//case when you have multiple words with maximum length
 		if(words[i].length == maxLength)
 		{
@@ -149,8 +150,8 @@ function functions6(string)
  * Write a JavaScript function that accepts a string as a parameter and counts the number of vowels within the string.
  * @return {[type]} [description]
  */
-function functions7(string)
-{
+ function functions7(string)
+ {
 	//number of vowels
 	var count = 0;
 
@@ -171,55 +172,55 @@ function functions7(string)
  * Write a JavaScript function that accepts a number as a parameter and check the number is prime or not
  * @return {[type]} [description]
  */
-function functions8(x)
-{
-	if(x % 2 == 0)
-	{
-		console.log("Not prime");
-	}
-	else if (Math.sqrt(x) % 1 == 0)
-	{
-		console.log("Not prime");
-	}
-	else if(x % 3 == 0)
-	{
-		console.log("Not prime");
-	}
-	else if(x % 5 == 0)
-	{
-		console.log("Not prime");
-	}
-	else if (x % 7 == 0)
-	{
-		console.log("Not prime");
-	}
-	else
-	{
-		console.log("Is prime");
-	}
+ function functions8(x)
+ {
+ 	if(x % 2 == 0)
+ 	{
+ 		console.log("Not prime");
+ 	}
+ 	else if (Math.sqrt(x) % 1 == 0)
+ 	{
+ 		console.log("Not prime");
+ 	}
+ 	else if(x % 3 == 0)
+ 	{
+ 		console.log("Not prime");
+ 	}
+ 	else if(x % 5 == 0)
+ 	{
+ 		console.log("Not prime");
+ 	}
+ 	else if (x % 7 == 0)
+ 	{
+ 		console.log("Not prime");
+ 	}
+ 	else
+ 	{
+ 		console.log("Is prime");
+ 	}
 
 
-}
+ }
 
 /**
  * Write a JavaScript function which accepts an argument and returns the type.
  * @return {[type]} [description]
  */
-function functions9(arg)
-{	
-	console.log(arg.toString() + " type is: " + typeof arg);
-}
+ function functions9(arg)
+ {	
+ 	console.log(arg.toString() + " type is: " + typeof arg);
+ }
 
 /**
  * Write a JavaScript function which returns the n rows by n columns identity matrix
  * @param  {[type]} n [description]
  * @return {[type]}   [description]
  */
-function functions10(n)
-{
+ function functions10(n)
+ {
 
-	var array = new Array(n);
-	var output = "";
+ 	var array = new Array(n);
+ 	var output = "";
 
 	//create array of length n. this is creating the columns from left to right
 	for(var i = 0; i < array.length; i ++)
@@ -257,36 +258,36 @@ function functions10(n)
 /**
  * Write a JavaScript function which will take an array of numbers stored and find the second lowest and second greatest numbers, respectively. 
  */
-function functions11(array)
-{
-	
-	function compareNumbers(a,b)
-	{
-		return a-b;
-	}
+ function functions11(array)
+ {
 
-	array.sort(compareNumbers);
-	var secondGreatest = 0;
-	var secondLowest = 0;
-	if (array.length == 2)
-	{
-		secondLowest = array[0];
-		secondGreatest = array[array.length - 1];		
-	}
-	else if(array.length > 2)
-	{
-		secondLowest = array[1];
-		secondGreatest = array[array.length - 2];
-	} 
-	else
-	{
-		secondLowest = array[0];
-		secondGreatest = array[0];
-	}
-	
-	console.log(array.toString());
-	console.log("second greatest is : " + secondGreatest + "\nsecond lowest is: " + secondLowest);
-}
+ 	function compareNumbers(a,b)
+ 	{
+ 		return a-b;
+ 	}
+
+ 	array.sort(compareNumbers);
+ 	var secondGreatest = 0;
+ 	var secondLowest = 0;
+ 	if (array.length == 2)
+ 	{
+ 		secondLowest = array[0];
+ 		secondGreatest = array[array.length - 1];		
+ 	}
+ 	else if(array.length > 2)
+ 	{
+ 		secondLowest = array[1];
+ 		secondGreatest = array[array.length - 2];
+ 	} 
+ 	else
+ 	{
+ 		secondLowest = array[0];
+ 		secondGreatest = array[0];
+ 	}
+
+ 	console.log(array.toString());
+ 	console.log("second greatest is : " + secondGreatest + "\nsecond lowest is: " + secondLowest);
+ }
 
 /**
  * Write a JavaScript function which says whether a number is perfect.
@@ -295,8 +296,8 @@ Example : The first perfect number is 6, because 1, 2, and 3 are its proper posi
  * @param  {[type]}
  * @return {[type]}
  */
-function functions12 (args)
-{
+ function functions12 (args)
+ {
 	// if positive integer
 	if (args > 0)
 	{
@@ -327,13 +328,13 @@ function functions12 (args)
  * @param  {[type]}
  * @return {[type]}
  */
-function functions13 (arg)
-{
+ function functions13 (arg)
+ {
 
-	function compareInt(a, b)
-	{
-		return a - b;
-	}
+ 	function compareInt(a, b)
+ 	{
+ 		return a - b;
+ 	}
 
 	//array of divisors
 	var divisors = [];
@@ -370,9 +371,9 @@ function functions13 (arg)
  * @param  {[type]} coins  [description]
  * @return {[type]}        [description]
  */
-function functions14 (amount, coins)
-{
-	var result = [];
+ function functions14 (amount, coins)
+ {
+ 	var result = [];
 
 	//coins is an array of coins
 	var initAmount = amount;
@@ -408,8 +409,8 @@ function functions14 (amount, coins)
  * Accept b and n from the user and display the result
  * @return {[type]} [description]
  */
-function functions15(b,n)
-{
+ function functions15(b,n)
+ {
 	//Built in way
 	//console.log(Math.pow(b,n));
 
@@ -429,9 +430,9 @@ function functions15(b,n)
  * Expected Output : "thequickbrownfxjmpsvlazydg"
  * @return {[type]} [description]
  */
-function functions16(arg)
-{
-	var characters = "";
+ function functions16(arg)
+ {
+ 	var characters = "";
 
 	// I think what the direction mean, is to extract any character so that every letter in the string is unique
 	for(var i = 0; i < arg.length; i++)
@@ -449,15 +450,63 @@ function functions16(arg)
  * @param  {[type]} arg [description]
  * @return {[type]}     [description]
  */
-function functions17(arg)
-{
-	var characters = "";
-
-	for(var i = 0; i < arg.length; i++)
+ function functions17(arg)
+ {
+	var result = new Map();
+	for(var i = 0; i < arg.length; i ++)
 	{
-		if (!characters.includes(arg[i]))
-		{	
-			characters += arg[i];
+		// ignore spaces
+		if(arg[i] != " ")
+		{
+			// repeated character
+			if(result.has(arg[i]))
+			{
+				var n = result.get(arg[i]);
+				n ++;
+				result.set(arg[i], n);
+			}
+			// new character
+			else
+			{
+				result.set(arg[i], 1)
+			}
 		}
-	}	
+	}
+
+	var mapIter = result.entries();
+	for(var v of result)
+	{
+		console.log(v)
+	}
+}
+
+/**
+ * Write a function for searching JavaScript arrays with a binary search
+ * Note : A binary search searches by splitting an array into smaller and smaller chunks until it finds the desired value.
+ * @return {[type]}
+ */
+function functions18(array,key)
+{
+	if(array.length < 1)
+	{
+		console.log("Empty array. Not Found");
+	}
+	else if (array.length == 1)
+	{
+		if(key == array[0])
+		{
+			console.log("Found " + key + " at index: 0");
+		}
+		else
+		{
+			console.log(key + " Not Found");
+		}
+	}
+	else
+	{
+		//begin binary search
+		var i = array.length / 2;
+
+	}
+
 }
