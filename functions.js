@@ -9,7 +9,9 @@ function main2()
 	// functions14(7,[10,5,25,1]);
 	//functions16("thequickbrownfoxjumpsoverthelazydog");
 	//functions17("ching chen aaaa bbb cc");
-	functions18(["a","b","c","d","e","f","g","h","i","j","k"],"_");
+	//functions18(["a","b","c","d","e","f","g","h","i","j","k"],"_");
+	//functions20(10);
+	functions21([1,2,3,4,5,6,7,8,9],3);
 	}
 
 /**
@@ -508,7 +510,6 @@ function functions18(array,key)
 		//begin binary search
 		var i = Math.ceil((array.length -1) / 2);
 		var found = false;
-		var edgeIndex = false;
 		while(!found)
 		{
 
@@ -535,12 +536,99 @@ function functions18(array,key)
 			{
 				i = Math.floor(i/2);
 			}
-
-
-
-
 		}
-
 	}
+}
+
+/**
+ * Write a JavaScript function that returns array elements larger than a number.
+ * @param  {[type]} arg [description]
+ * @return {[type]}     [description]
+ */
+function functions19()
+{
+	var n = 10;
+	var array = [10,5,16,23,8,1];
+	var result = [];
+
+	array = array.sort();
+
+	for (var i = 0; i < array.length; i++)
+	{
+		if (array[i] > n)
+		{
+			result.push(array[i]);
+		}
+	}
+	console.log(result);
+}
+
+/**
+ * Write a JavaScript function that generates a string id (specified length) of random characters.
+ * @param  {[type]} arg [description]
+ * @return {[type]}     [description]
+ */
+function functions20(n)
+{
+	var string = "";
+	var min = 48;
+	var max = 122;
+
+	for (var i = 0 ; i < n; i++)
+	{
+		var validChar = false;
+		var random = 0;
+
+		while(!validChar)
+		{
+ 			random =  Math.floor(Math.random() * (max - min + 1)) + min;
+
+			if (random > 57 && random < 65)
+			{
+				validChar = false;	
+			}
+			else if (random > 90 && random < 97)
+			{
+				validChar = false;
+			}
+			else
+			{
+				validChar = true;
+			}
+		}
+		string += String.fromCharCode(random);
+	}
+	console.log("Randomly generated string of " + n + " characters is: " + string);
+}
+
+/**
+ * Write a JavaScript function to get all possible subset with a fixed length (for example 2) combinations in an array. 
+ * Sample array : [1, 2, 3] and subset length is 2
+ * Expected output : [[2, 1], [3, 1], [3, 2], [3, 2, 1]]
+ * @return {[type]} [description]
+ */
+function functions21(array,n)
+{
+	//[1,2,3,4,5]
+	//n = 3
+	//
+
+	// start out at the first subset
+	for(var = i = (n-1); i < array.length; i++)
+	{
+		// using above subset, move the last index to create a new subset
+		for (var j = (n-1); j < array.length; j++)
+		{
+			var result = [];
+			//backtrack
+			for (var k = i - 1; k >= i - n; k--)
+			{
+				result.push(array[k]);
+			}
+			result.push(array[i - n])
+			console.log(result);
+		}	
+	}
+	
 
 }
