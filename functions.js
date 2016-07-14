@@ -11,7 +11,9 @@ function main2()
 	//functions17("ching chen aaaa bbb cc");
 	//functions18(["a","b","c","d","e","f","g","h","i","j","k"],"_");
 	//functions20(10);
-	functions21([1,2,3,4,5,6,7,8,9],3);
+	//functions21([1,2,3,4,5,6,7,8,9],3);
+	//functions22("ow3roesoource.comooooo","o");
+	functions23("abacddbec");
 	}
 
 /**
@@ -614,21 +616,68 @@ function functions21(array,n)
 	//
 
 	// start out at the first subset
-	for(var = i = (n-1); i < array.length; i++)
-	{
-		// using above subset, move the last index to create a new subset
-		for (var j = (n-1); j < array.length; j++)
-		{
-			var result = [];
-			//backtrack
-			for (var k = i - 1; k >= i - n; k--)
-			{
-				result.push(array[k]);
-			}
-			result.push(array[i - n])
-			console.log(result);
-		}	
-	}
-	
+	// for(var = i = (n-1); i < array.length; i++)
+	// {
+	// 	// using above subset, move the last index to create a new subset
+	// 	for (var j = (n-1); j < array.length; j++)
+	// 	{
+	// 		var result = [];
+	// 		//backtrack
+	// 		for (var k = i - 1; k >= i - n; k--)
+	// 		{
+	// 			result.push(array[k]);
+	// 		}
+	// 		result.push(array[i - n])
+	// 		console.log(result);
+	// 	}	
+	// }
+}
 
+/**
+ * Write a JavaScript function that accepts two arguments, a string and a letter and the function will count the number of occurrences of the specified letter within the string.
+ * Sample arguments : 'w3resource.com', 'o' 
+ * Expected output : 2 
+ * @return {[type]} [description]
+ */
+function functions22(string,letter)
+{
+	var result = string.split(letter);
+
+	console.log(letter + " occurs in " + string + " " + (result.length - 1) + " times.")
+}
+
+/**
+ * Write a JavaScript function to find the first not repeated character.
+ * Sample arguments : 'abacddbec'
+ * Expected output : 'e' 
+ * @return {[type]} [description]
+ */
+function functions23(string)
+{
+	console.log("String is: " + string);
+	var chars = new Map();
+	var repeats = new Map();
+
+	// loop through array once to count characters
+	for(var i = 0; i < string.length; i++)
+	{
+		if (!chars.has(string[i]))
+		{
+			chars.set(string[i],string[i])
+		}
+		else
+		{
+			//repeats found
+			repeats.set(string[i],string[i])
+		}
+	}
+
+	//loop through loop to check for repeated characters
+	for(var i = 0; i < string.length; i++)
+	{
+		if (!repeats.has(string[i]))
+		{
+			console.log("first non repeated char: " + string[i]);
+		}
+	}
 }
