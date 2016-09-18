@@ -13,7 +13,11 @@ function main2()
 	//functions20(10);
 	//functions21([1,2,3,4,5,6,7,8,9],3);
 	//functions22("ow3roesoource.comooooo","o");
-	functions23("abacddbec");
+	//functions23("abacddbec");
+	// functions24([12, 345, 4, 546, 122, 84, 98, 64, 9, 1, 3223, 455, 23, 234, 213]);
+	//functions25(["Australia", "Germany", "United States of America"]);
+	//functions26("example.com");
+	functions27("abracadabra");
 	}
 
 /**
@@ -679,5 +683,210 @@ function functions23(string)
 		{
 			console.log("first non repeated char: " + string[i]);
 		}
+	}
+}
+
+
+/**
+ * Write a JavaScript function to apply Bubble Sort algorithm
+ * Note : According to wikipedia "Bubble sort, sometimes referred to as sinking sort, is a simple sorting algorithm that works by repeatedly stepping through the list to be sorted, comparing each pair of adjacent items and swapping them if they are in the wrong order". 
+ Sample array : [12, 345, 4, 546, 122, 84, 98, 64, 9, 1, 3223, 455, 23, 234, 213]
+Expected output : [3223, 546, 455, 345, 234, 213, 122, 98, 84, 64, 23, 12, 9, 4, 1]
+ * @param  {[type]} arg [description]
+ * @return {[type]}     [description]
+ */
+ function functions24(arg)
+ {
+ 	console.log("unsorted array: " + arg);
+
+ 	for(var n = 0; n < arg.length; n++)
+ 	{
+ 		for(var i = 0; i < arg.length; i ++)
+ 		{
+ 			if (arg[i] < arg[i+1])
+ 			{
+ 				var temp = arg[i+1];
+ 				arg[i+1] = arg[i];
+ 				arg[i] = temp;
+ 			}
+ 		}
+ 	}
+
+ 	console.log("sorted array:" + arg);
+
+ }
+
+/**
+ * Write a JavaScript function that accept a list of country names as input and returns the longest country name as output.
+ Sample function : Longest_Country_Name(["Australia", "Germany", "United States of America"])
+ Expected output : "United States of America"
+ * @param  {[type]} arg [description]
+ * @return {[type]}     [description]
+ */
+ function functions25(arg)
+ {
+
+ 	var result = [];
+ 	for(var i = 0; i < arg.length; i ++)
+ 	{
+ 		if (result.length < 1)
+ 		{
+ 			result.push(arg[i])
+ 		}
+ 		if (arg[i].length > result[0].length)
+ 		{
+ 			result.pop();
+ 			result.push(arg[i]);
+ 		}
+ 	}
+
+ 	console.log("Longest country name is: " + result[0]);
+ }
+
+
+/**
+ * Write a JavaScript function to find longest substring in a given a string without repeating characters
+ * @param  {[type]} arg [description]
+ * @return {[type]}     [description]
+ */
+ function functions26(arg)
+ {
+
+ 	//compare function
+ 	function compareLength(a,b)
+ 	{
+ 		if (a.length > b.length)
+ 		{
+ 			return -1;
+ 		}
+ 		else if (b.length > a.length)
+ 		{
+ 			return 1;
+ 		}
+ 		else
+ 		{
+ 			return 0;
+ 		}	
+ 	}
+
+	//"example.com"
+	var uniqueSubStringList = [];
+
+
+	// starting index for substings
+	for(var i = 0; i < arg.length; i++)
+	{
+		var subString = "";
+		// loop is to create the substring
+		for(var j = i; j < arg.length; j++)
+		{
+			if(subString.length < 1)
+			{
+				subString += arg[j];
+
+			}
+			else if(subString.includes(arg[j]))
+			{
+	 			// new substring is formed
+	 			uniqueSubStringList.push(subString);
+	 			break;
+	 			
+	 		}
+			else
+			{
+				subString += arg[j];
+			}
+
+			//reached end of substring
+			if(j == (arg.length - 1))
+			{
+				uniqueSubStringList.push(subString);
+			}
+		}
+	 }
+
+	 uniqueSubStringList.sort(compareLength);
+	 var maxLength = 0;
+	 if (uniqueSubStringList.length > 0)
+	 {
+	 	maxLength = uniqueSubStringList[0].length;
+
+	 	for(var i = 0; i < arg.length; i++)
+	 	{
+	 		if(uniqueSubStringList[i].length == maxLength)
+	 		{
+	 			console.log("longest unique substring: " + uniqueSubStringList[i]);
+	 		}
+	 	}	
+	 }
+ }
+
+/**
+ * Write a JavaScript function that returns the longest palindrome in a given string.
+ *
+ * Note: According to Wikipedia "In computer science, the longest palindromic substring or longest symmetric factor problem is the problem of finding a maximum-length contiguous substring of a given string that is also a palindrome. For example, the longest palindromic substring of "bananas" is "anana". The longest palindromic substring is not guaranteed to be unique; for example, in the string "abracadabra", there is no palindromic substring with length greater than three, but there are two palindromic substrings with length three, namely, "aca" and "ada".
+In some applications it may be necessary to return all maximal palindromic substrings (that is, all substrings that are themselves palindromes and cannot be extended to larger palindromic substrings) rather than returning only one substring or returning the maximum length of a palindromic substring.
+ * @param  {[type]} arg [description]
+ * @return {[type]}     [description]
+ */
+ function functions27(arg)
+ {
+
+ 	function compareLength(a,b)
+ 	{
+ 		if (a.length > b.length)
+ 		{
+ 			return -1;
+ 		}
+ 		else if (a.length < b.length)
+ 		{
+ 			return 1
+ 		}
+ 		else
+ 		{
+ 			return 0;
+ 		}
+ 	}
+ 	// remove spaces
+ 	var word = arg.split(" ").join("");
+ 	
+ 	var palindromeList = [];
+
+ 	for(var i = 0; i < word.length; i++)
+ 	{
+ 		var stringBuilder = "";
+ 		for(var j = i; j < word.length; j++)
+ 		{
+ 			stringBuilder+=word[j];
+
+ 			if (stringBuilder.length > 1)
+ 			{
+ 				//splice into array of words, reverse, then join as string
+ 				var reverse = stringBuilder.split("").reverse().join("");
+ 				if(stringBuilder == reverse)
+ 				{
+					// is a palindrome
+					palindromeList.push(stringBuilder);
+				}
+			}
+		}
+	}
+
+	palindromeList.sort(compareLength);
+	var maxLength = 0;
+	for(var i = 0; i < palindromeList.length; i ++)
+	{
+		
+		if (palindromeList[i] != null)
+		{
+			if (maxLength == 0)
+			{
+				maxLength = palindromeList[i].length;	
+			}
+			if (maxLength == palindromeList[i].length)
+			{
+				console.log(palindromeList[i]);
+			}	
+		}	 
 	}
 }
