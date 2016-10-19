@@ -17,7 +17,8 @@ function main2()
 	// functions24([12, 345, 4, 546, 122, 84, 98, 64, 9, 1, 3223, 455, 23, 234, 213]);
 	//functions25(["Australia", "Germany", "United States of America"]);
 	//functions26("example.com");
-	functions27("abracadabra");
+	//functions27("abracadabra");
+	function29();
 	}
 
 /**
@@ -889,4 +890,35 @@ In some applications it may be necessary to return all maximal palindromic subst
 			}	
 		}	 
 	}
+}
+
+/**
+ * Write a JavaScript program to pass a 'JavaScript function' as parameter. 
+ * @return {[type]} [description]
+ */
+function function28()
+{
+
+	function aDummyFunction(functionB)
+	{
+		console.log("Came into aDummyFunction");
+		functionB();
+	}
+	
+	function bDummyFunction()
+	{
+		console.log("executed bDummyFunction");
+	}
+
+	aDummyFunction(bDummyFunction);
+}
+
+
+/**
+ * Write a JavaScript function to get the function name.
+ * @return {[type]} [description]
+ */
+function function29()
+{
+	console.log(function29.name);
 }
